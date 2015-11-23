@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>搜索</title>
+    <link rel="stylesheet" href="../demo/css/jquery-ui.css">
+  	<script src="../demo/js/jquery-1.9.1.js"></script>
+  	<script src="../demo/js/jquery-ui.js"></script>
+  	<link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+	<script>
+		$(document).ready(function(){
+			var availableTags = [
+			      "ActionScript",
+			      "AppleScript",
+			      "Asp",
+			      "BASIC",
+			      "C",
+			      "C++",
+			      "Clojure",
+			      "COBOL",
+			      "ColdFusion",
+			      "Erlang",
+			      "Fortran",
+			      "Groovy",
+			      "Haskell",
+			      "Java",
+			      "JavaScript",
+			      "Lisp",
+			      "Perl",
+			      "PHP",
+			      "Python",
+			      "Ruby",
+			      "Scala",
+			      "Scheme"
+			    ];
+			    $( "#search-form" ).autocomplete({
+			      source: availableTags
+			    });
+		});
+	</script>
+</head>
+<body>
+	<input id="search-form" type="text"></input>
+	<a class="secrch_btn" href="javascript:;">搜索</a>
+</body>
+<script type="text/javascript">
+	$('.secrch_btn').click(function(){
+		var text = $('#search-form').val();
+		$.ajax({
+            url: '',
+            type: "POST",
+            timeout:60000,
+            data:({"text":itemids}),
+            dataType: 'json',
+            success: function(json){
+                if (json == null) {
+                    alert(MGLANG.msgTimeout);
+                } else {
+                    var code = json.status.code;
+                    // var msg = json.status.msg;
+                    if(code == 1001) {
+                        
+                    }else{
+                        // alert(msg);
+                    }
+                }
+            }
+        });
+	});
+</script>
+</html>
