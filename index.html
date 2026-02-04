@@ -34,6 +34,7 @@
     }
 
     .page {
+      width: 100%;
       max-width: 720px;
       margin: 0 auto;
       padding: 18px 16px 32px;
@@ -221,6 +222,13 @@
         grid-template-columns: 54px 1fr 1fr 1fr;
       }
       .stat .value { font-size: 16px; }
+    }
+
+    @media (orientation: landscape) and (max-height: 520px) {
+      .page {
+        max-width: none;
+        padding: 12px 12px 20px;
+      }
     }
   </style>
 </head>
