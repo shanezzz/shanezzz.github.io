@@ -1,0 +1,30 @@
+APP SUMMARY - shanezzz.github.io
+
+WHAT IT IS
+A static HTML search page with jQuery UI autocomplete over a hardcoded list
+of programming languages and a placeholder AJAX search submit.
+
+WHO IT'S FOR
+Primary user/persona: Not found in repo.
+
+WHAT IT DOES
+- Renders a single text input and a "Search" button.
+- Shows autocomplete suggestions from a fixed language list (availableTags).
+- Uses jQuery UI autocomplete bound to the #search-form input.
+- Triggers a client-side AJAX POST on button click (URL is empty).
+- Expects a JSON response with status.code handling (stub only).
+- Loads jQuery and jQuery UI assets plus an external demo stylesheet.
+
+HOW IT WORKS (ARCHITECTURE)
+- UI: index.html with input and button.
+- Client logic: inline JavaScript using jQuery and jQuery UI.
+- Data: availableTags array in the page script (no external data source).
+- Network: AJAX POST to "" with payload { text: itemids } (itemids not defined).
+- Backend/service/storage: Not found in repo.
+
+HOW TO RUN (MINIMAL STEPS)
+1. Open index.html in a browser (or serve the repo root with any static server).
+2. Ensure the JS/CSS asset paths in index.html resolve; the repo contains
+   js/jquery-1.9.1.js, js/jquery-ui.js, and css/jquery-ui.css, but the HTML
+   currently references ../demo/... paths.
+3. Backend/API for the AJAX request: Not found in repo.
